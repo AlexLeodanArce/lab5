@@ -1,0 +1,33 @@
+<h2>Nuevo Monstruo</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Formulario</th>
+        </tr>
+    <thead>
+    <tbody>
+    <%= form_with model: @monster do |f| %>
+        <tr>
+            <td><%= f.label "Nombre: "%></td>
+            <td><%= f.text_field :name, placeholder: "Nombre" %></td>
+        </tr>
+        <tr>
+            <td><%= f.label "Descripcion: "%></td>
+            <td><%= f.text_area :description, placeholder: "Descripción" %></td>
+        </tr>
+        <tr>
+            <td><%= f.label "Teléfono: "%></td>
+            <td><%= f.text_field :phone, placeholder: "Teléfono" %></td>
+        </tr>
+        <tr>
+            <td><%= f.label "Fecha de nacimiento: "%></td>
+            <td><%= f.date_field :birthdate, min: Date.new(1920,01,01), max: Date.today%></td>
+        </tr>
+        <tfoot>
+            <tr>
+                <td><%= f.submit "Crear", class: "btn btn-primary mb-2" %></td>
+            </tr>
+        </tfoot>
+    <% end %>
+    </tbody>
+</table>
